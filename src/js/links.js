@@ -1,64 +1,8 @@
 /**
  * Created by Xavier on 29.08.16.
  */
-function behav_link()
-{
-    var liens = document.getElementsByTagName('a');
-    for (var i = 0 ; i < liens.length ; i++)
-    {
-        if(liens[i].id == 'print_link')
-        {
-            liens[i].onclick = function(){
-                window.print();
-                return false;
-            };
-        }
-    }
-}
 
-function behav_link2()
-{
-    var liens = document.getElementsByTagName('a');
-    for (var i = 0 ; i < liens.length ; i++)
-    {
-        isPrint = liens[i].getAttribute("data-printflag");
-        if(isPrint != null)
-        {
-            liens[i].onclick = function()
-            {
-                window.print();
-                return false;
-            };
-        }
-    }
-}
-
-function behav_link3()
-{
-    var liens = document.getElementsByTagName('a');
-    for (var i = 0 ; i < liens.length ; i++)
-    {
-        if(liens[i].id == 'print_link')
-        {
-            liens[i].onclick = function(){
-                window.print();
-                return false;
-            };
-        }
-        if(liens[i].id == 'mail')
-        {
-            liens[i].onmouseover = function(){
-                document.getElementById('mailimg').src = 'assets/images/icons/maila.gif';
-            };
-            liens[i].onmouseout = function(){
-                document.getElementById('mailimg').src = 'assets/images/icons/mail.gif';
-            };
-        }
-    }
-}
-
-
-function behav_link4(lien){
+function behav_link(lien){
     var liens = document.getElementsByTagName('a');
     for (var i = 0 ; i < liens.length ; i++) {
         lien = liens[i];
