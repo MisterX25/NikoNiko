@@ -65,6 +65,6 @@ if(isset($flashmessage))
         echo ("<tr><td>$key</td></tr>");
     ?>
 </table>
-<form method="post">
-    <input type="submit" class="button" name="add" value="Ajouter"><input type="submit" class="button" name="del" value="Supprimer"><input type="text" class="input" name="nameval" /><br>
-</form>
+<a href="person">
+    <input type="submit" class="button" name="add" value="Ajouter"><br>
+</a>

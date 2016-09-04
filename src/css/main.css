@@ -169,6 +169,24 @@ td {
     border-radius: 4px;
 }
 
+.button:hover {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 7px 20px;
+    background-color: lightgreen;
+    text-transform: uppercase;
+    margin-right: 5px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
 .clickable {
     cursor: pointer;
 }
