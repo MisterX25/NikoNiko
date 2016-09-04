@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+# Le serveur doit suivre les liens symboliques :
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+RewriteBase /NikoNiko
+
+# Réécriture des pages standards du site
+RewriteRule ^([a-z]*[0-9]*\-*_*)(\.html?|\/)?$ 				index.php?page=$1 [QSA,L]
+
+</IfModule>

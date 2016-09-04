@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f2d6ad49-92c6-49b0-a8bb-84be611a7dc4" name="dvm" url="http://dvm">
+        <fileTransfer host="dvm" port="22" rootFolder="/var/www" accessType="SFTP" password="dfd8dfc5dfc5dfde" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

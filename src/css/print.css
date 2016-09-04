@@ -1,0 +1,7 @@
+header, footer{
+	display: none;
+}
+#page, #content{ 
+	width: 100%;
+	border: 0; 
+}

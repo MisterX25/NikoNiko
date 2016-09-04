@@ -1,0 +1,79 @@
+{
+  "1634": {
+    "start_date": {
+      "date": "2016-08-22 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  },
+  "1635": {
+    "start_date": {
+      "date": "2016-08-29 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  },
+  "1636": {
+    "start_date": {
+      "date": "2016-09-05 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  },
+  "1637": {
+    "start_date": {
+      "date": "2016-09-12 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  },
+  "1639": {
+    "start_date": {
+      "date": "2016-09-26 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  },
+  "1640": {
+    "start_date": {
+      "date": "2016-10-03 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  },
+  "1641": {
+    "start_date": {
+      "date": "2016-10-10 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  },
+  "1644": {
+    "start_date": {
+      "date": "2016-10-31 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  },
+  "1646": {
+    "start_date": {
+      "date": "2016-11-14 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  },
+  "1647": {
+    "start_date": {
+      "date": "2016-11-21 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  },
+  "1648": {
+    "start_date": {
+      "date": "2016-11-28 00:00:00",
+      "timezone_type": 3,
+      "timezone": "Europe\/Berlin"
+    }
+  }
+}
