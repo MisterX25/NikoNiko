@@ -56,15 +56,10 @@ if (isset($del)) // Delete a person
 <?php
 if(isset($flashmessage))
     echo "<div class=flashMessage>$flashmessage</div>";
-?>
 
-<table>
-    <tr><th>Acronyme</th></tr>
-    <?php
-    foreach ($people as $key => $cal)
-        echo ("<tr><td>$key</td></tr>");
-    ?>
-</table>
+foreach ($people as $key => $cal)
+    echo ("<a href='person?pid=$key'><input type='submit' class='button' name='add' value='$key'></a><br/>");
+?>
 <a href="person">
-    <input type="submit" class="button" name="add" value="Ajouter"><br>
+    <input type="submit" class="button" name="add" value="+"><br/>
 </a>
