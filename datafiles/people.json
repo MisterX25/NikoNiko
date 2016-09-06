@@ -1,11 +1,11 @@
 {
   "RBI": {
     "name": "BAZZARI Raphael",
-    "tel": "1",
+    "tel": "",
     "keepinfo": "on",
     "email": "rbi@cpnv.ch",
     "url": "",
-    "pays": "-1",
+    "pays": "23",
     "date": "",
     "action": "upd"
   },
@@ -24,7 +24,7 @@
     "keepinfo": "",
     "email": "jda@cpnv.ch",
     "url": "",
-    "pays": "-1",
+    "pays": "196",
     "date": "1992-12-12",
     "action": "upd"
   },
@@ -46,7 +46,7 @@
     "pays": "-1",
     "date": "",
     "submit": "Envoi",
-    "action": "del"
+    "action": "upd"
   },
   "DDG": {
     "name": "DILLENBOURG Dinesh",
@@ -137,6 +137,25 @@
     "email": "",
     "url": "",
     "pays": "-1",
+    "date": ""
+  },
+  "ZYX": {
+    "name": "Zo\u00e9 Yonex",
+    "tel": "021",
+    "keepinfo": "",
+    "email": "xyz@cpnv.ch",
+    "url": "",
+    "pays": "101",
+    "date": "",
+    "action": "upd"
+  },
+  "": {
+    "name": "",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": "",
     "date": ""
   }
 }

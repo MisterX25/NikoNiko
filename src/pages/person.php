@@ -24,10 +24,9 @@ else
     $fieldsettitle = "d'un nouvel utilisateur";
 }
 
-error_log(print_r($_POST, true));
 if (!empty($_POST)) switch ($_POST['action'])
 {
-    case 'upd': // Add or update
+    case 'update': // Add or update
         $fields = array_merge($fields, $_POST);
         $errors = array();
         if (isset($fields["email"]))
@@ -65,7 +64,7 @@ if (!empty($_POST)) switch ($_POST['action'])
         }
         break;
 
-    case 'del': // Delete
+    case 'delete': // Delete
         $victim = $_POST['name'];
         unset($people[$_POST['acronym']]);
         save('people');
@@ -73,7 +72,21 @@ if (!empty($_POST)) switch ($_POST['action'])
         $fieldsettitle = "d'un nouvel utilisateur";
         break;
 
-    case 'nop': // Nothing
+    case 'create':
+        $fields = array_merge($fields, $_POST);
+        $pid = $fields['acronym'];
+        if (isset($people[$pid])) // Duplicate acronym
+        {
+            $flashMessage = "Cet acronyme est déjà utilisé";
+        } else
+        {
+            unset ($fields['acronym']);
+            foreach ($fields as $key => $val)
+                $people[$pid][$key] = $val;
+            save('people');
+            $infoMessage = "Profil créé";
+            $fieldsettitle = "de $pid";
+        }
         break;
 }
 
@@ -138,11 +151,10 @@ if (isset($infoMessage)) echo "<div class='infoMessage'>$infoMessage</div>";
             <input type="date" name="date" id="date" placeholder="yyyy-mm-dd" value="<?= $fields["date"] ?>" data-errormsg="Date invalide"/>
         </p>
         <div>
-            <?php
-            if (isset($pid)) echo "<button id='cmdDelete' name='action' class='button confirm' type='submit' value='del'>Supprimer</button>";
-            ?>
-            <button id="cmdSave" name="action" class="button" type="submit" value="upd">Sauver</button>
-            <a href="<?php echo htmlentities($_SERVER["REQUEST_URI"], '?'); ?>" <span id="cmdCancel" class="button">Annuler</span></a>
+            <button id='cmdDelete' name='action' class='button confirm' type='submit' value='delete'>Supprimer</button>
+            <button id="cmdSave" name="action" class="button" type="submit" value="update">Sauver</button>
+            <button id="cmdCreate" name="action" class="button" type="submit" value="create">Créer</button>
+            <a href="<?php echo htmlentities($_SERVER["REQUEST_URI"]); ?>" <button id="cmdCancel" type="button" class="button">Annuler</button></a>
             <button id="cmdEdit" type="button" class="button">Editer</button>
         </div>
     </fieldset>

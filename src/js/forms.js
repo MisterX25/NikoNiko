@@ -149,10 +149,28 @@ function form_conf()
         {
             return verif_form(this);
         }
-        if (document.getElementById('newacronym') != null)
-            set_edit_mode(theForm);
+        if (document.getElementById('newacronym') != null) // The new acronym field is only present for creation
+            set_create_mode(theForm);
         else
             set_view_mode(theForm);
+    }
+}
+
+function showButtons(buttonList)
+{
+    for (i=0; i<buttonList.length; i++)
+    {
+        var button = document.getElementById(buttonList[i]);
+        button.className = button.className.replace(/\bhidden\b/,''); // remove hidden class
+    }
+}
+
+function hideButtons(buttonList)
+{
+    for (i=0; i<buttonList.length; i++)
+    {
+        var button = document.getElementById(buttonList[i]);
+        button.className += ' hidden'; // add hidden class
     }
 }
 
@@ -168,16 +186,9 @@ function set_view_mode(f) // puts the form in view mode
     {
         fields[j].disabled = true;
     }
-    // activate action buttons
-    var button = document.getElementById('cmdSave');
-    button.className += ' hidden';
-    var button = document.getElementById('cmdDelete');
-    button.className += ' hidden';
-    var button = document.getElementById('cmdCancel');
-    button.className += ' hidden';
-    // hide edit button
-    var button = document.getElementById('cmdEdit');
-    button.className = button.className.replace(/\bhidden\b/,''); // remove hidden class
+    // Hide/Show appropriate buttons
+    showButtons(['cmdEdit']);
+    hideButtons(['cmdDelete','cmdCancel','cmdSave','cmdCreate'])
 }
 
 function set_edit_mode(f) // puts the form in edit mode
@@ -194,19 +205,12 @@ function set_edit_mode(f) // puts the form in edit mode
     {
         fields[j].disabled = false;
     }
-    // activate action buttons
-    var button = document.getElementById('cmdSave');
-    button.className = button.className.replace(/\bhidden\b/,''); // remove hidden class
-    var button = document.getElementById('cmdDelete');
-    button.className = button.className.replace(/\bhidden\b/,''); // remove hidden class
-    var button = document.getElementById('cmdCancel');
-    button.className = button.className.replace(/\bhidden\b/,''); // remove hidden class
-    // hide edit button
-    var button = document.getElementById('cmdEdit');
-    button.className += ' hidden';
+    // Hide/Show appropriate buttons
+    showButtons(['cmdSave','cmdDelete','cmdCancel']);
+    hideButtons(['cmdCreate','cmdEdit'])
 }
 
-function set_edit_mode(f) // puts the form in edit mode
+function set_create_mode(f) // puts the form in edit mode
 {
     // enable inputs
     var fields = f.getElementsByTagName('input');
@@ -220,14 +224,7 @@ function set_edit_mode(f) // puts the form in edit mode
     {
         fields[j].disabled = false;
     }
-    // activate action buttons
-    var button = document.getElementById('cmdSave');
-    button.className = button.className.replace(/\bhidden\b/,''); // remove hidden class
-    var button = document.getElementById('cmdDelete');
-    button.className = button.className.replace(/\bhidden\b/,''); // remove hidden class
-    var button = document.getElementById('cmdCancel');
-    button.className = button.className.replace(/\bhidden\b/,''); // remove hidden class
-    // hide edit button
-    var button = document.getElementById('cmdEdit');
-    button.className += ' hidden';
+    // Hide/Show appropriate buttons
+    showButtons(['cmdCreate','cmdCancel']);
+    hideButtons(['cmdSave','cmdDelete','cmdEdit'])
 }
