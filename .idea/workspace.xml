@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c71a9491-c011-4c6e-826a-ffe4acba69f0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/forms.js" afterPath="$PROJECT_DIR$/src/js/forms.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/person.php" afterPath="$PROJECT_DIR$/src/pages/person.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/calendar.php" afterPath="$PROJECT_DIR$/src/pages/calendar.php" />
     </list>
     <ignored path="NikoNiko.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="person.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="person.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/person.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="343">
@@ -113,12 +112,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calendar.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="calendar.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/calendar.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1473692841000" expanded="true" signature="755:761" ph=" " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,7 +176,6 @@
         <option value="$PROJECT_DIR$/src/js/links.js" />
         <option value="$PROJECT_DIR$/src/includes/countries.php" />
         <option value="$PROJECT_DIR$/src/pages/test.php" />
-        <option value="$PROJECT_DIR$/src/pages/calendar.php" />
         <option value="$PROJECT_DIR$/datafiles/votes.json" />
         <option value="$PROJECT_DIR$/src/pages/error.php" />
         <option value="$PROJECT_DIR$/src/js/load.js" />
@@ -188,6 +188,7 @@
         <option value="$PROJECT_DIR$/src/js/buttons.js" />
         <option value="$PROJECT_DIR$/src/js/forms.js" />
         <option value="$PROJECT_DIR$/src/pages/person.php" />
+        <option value="$PROJECT_DIR$/src/pages/calendar.php" />
       </list>
     </option>
   </component>
@@ -483,12 +484,12 @@
       <workItem from="1473168787365" duration="11153000" />
       <workItem from="1473422531378" duration="602000" />
       <workItem from="1473660273024" duration="18012000" />
-      <workItem from="1473690538240" duration="1635000" />
+      <workItem from="1473690538240" duration="1676000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115025000" />
+    <option name="totallyTimeSpent" value="115066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-101" y="-1027" width="1680" height="1027" extended-state="6" />
@@ -558,7 +559,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
-          <folding />
+          <folding>
+            <marker date="1473692841000" expanded="true" signature="755:761" ph=" " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -809,14 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/calendar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/links.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -871,6 +866,16 @@
         <state relative-caret-position="343">
           <caret line="133" column="12" selection-start-line="133" selection-start-column="12" selection-end-line="133" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <marker date="1473692841000" expanded="true" signature="755:761" ph=" " />
+          </folding>
         </state>
       </provider>
     </entry>

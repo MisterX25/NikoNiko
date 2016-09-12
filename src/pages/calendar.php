@@ -8,8 +8,6 @@
 extract ($_GET); // $page, $course
 load('calendars');
 load('votes');
-error_log(print_r($calendars,true));
-error_log(print_r($votes,true));
 
 // prepare empty table with row and column headers
 foreach ($calendars as $item => $value)
