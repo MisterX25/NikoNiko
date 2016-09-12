@@ -7,6 +7,6 @@ load('calendars');
     <tr><th>Calendrier</th></tr>
     <?php
     foreach ($calendars as $key => $cal)
-        echo ("<tr><td class='clickable'><a href='calendar?course=$key'>$key</a></td></tr>");
+        echo ("<tr><td class='clickable'><a href='calendar/$key'>$key</a></td></tr>");
     ?>
 </table>

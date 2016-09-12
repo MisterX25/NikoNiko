@@ -33,6 +33,7 @@ $description = isset($pages[$page]["description"]) ? $pages[$page]["description"
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <script type="text/javascript" src="src/js/links.js"></script>
     <script type="text/javascript" src="src/js/load.js"></script>
+    <script type="text/javascript" src="src/js/clickabletable.js"></script>
 
     <link href="src/css/styles.css" rel="stylesheet" type="text/css" />
 
