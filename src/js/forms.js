@@ -23,6 +23,9 @@ function autoSelect(form_id, value)
 //Vérification de la validité d'une date
 function verifDate(d, m, y)
 {
+    console.log(y); return false;
+    if (y < 1900 || y > 2100) return false;
+
     if (m == 2 && d > 28)
     {
         if (!((y % 4 == 0 && y % 100 != 0) || y % 400 == 0))
@@ -102,7 +105,6 @@ function verif_form(formulaire)
             input.focus();
             valid = false;
         }
-
         switch (input.type)
         {
             case 'email'://C'est un mail
@@ -115,7 +117,7 @@ function verif_form(formulaire)
                 break;
 
 
-            case 'url'://C'est un lien
+            case 'url'://C'est un lien   !!!!!! As of Sept 2016, Safari does not recognize this type: it sees a text instead
                 if (input.value != '' && !verifUrlByReg(input.value))
                 {
                     showError(input);
@@ -124,8 +126,7 @@ function verif_form(formulaire)
                 }
                 break;
 
-            case 'date'://C'est une date
-                valDate();
+            case 'date'://C'est une date    !!!!!! As of Sept 2016, Safari does not recognize this type: it sees a text instead
                 if (!verifDate(input.value.substr(0, 2), input.value.substr(3, 2), input.value.substr(6, 4)))
                 {
                     showError(input);
