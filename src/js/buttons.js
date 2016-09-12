@@ -22,4 +22,11 @@ function button_conf()
         {
             set_edit_mode(this.form);
         }
+
+    cancelButton = document.getElementById('cmdCancel');
+    if (cancelButton != null)
+        cancelButton.onclick = function ()
+        {
+            history.go(-1);
+        }
 }

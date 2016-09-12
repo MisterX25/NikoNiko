@@ -126,7 +126,7 @@ function verif_form(formulaire)
 
             case 'date'://C'est une date
                 valDate();
-                if (!verifDate(input.value.substr(8, 2), input.value.substr(5, 2), input.value.substr(0, 4)))
+                if (!verifDate(input.value.substr(0, 2), input.value.substr(3, 2), input.value.substr(6, 4)))
                 {
                     showError(input);
                     input.focus();
@@ -144,15 +144,21 @@ function form_conf()
     var formulaires = document.getElementsByTagName('form');
     for (var i = 0; i < formulaires.length; i++)
     {
+
         theForm = formulaires[i];
         theForm.onsubmit = function ()
         {
             return verif_form(this);
         }
-        if (document.getElementById('newacronym') != null) // The new acronym field is only present for creation
-            set_create_mode(theForm);
-        else
-            set_view_mode(theForm);
+
+        // Put the form in the appropriate mode
+        fmode = theForm.getAttribute('data-formmode');
+        switch (fmode)
+        {
+            case 'editprofile': set_edit_mode(theForm); break;
+            case 'viewprofile': set_view_mode(theForm); break;
+            case 'newprofile': set_create_mode(theForm); break;
+        }
     }
 }
 
@@ -188,7 +194,7 @@ function set_view_mode(f) // puts the form in view mode
     }
     // Hide/Show appropriate buttons
     showButtons(['cmdEdit']);
-    hideButtons(['cmdDelete','cmdCancel','cmdSave','cmdCreate'])
+    hideButtons(['cmdDelete','cmdCancel','cmdSave','cmdCreate','inpAcronym'])
 }
 
 function set_edit_mode(f) // puts the form in edit mode
@@ -207,7 +213,7 @@ function set_edit_mode(f) // puts the form in edit mode
     }
     // Hide/Show appropriate buttons
     showButtons(['cmdSave','cmdDelete','cmdCancel']);
-    hideButtons(['cmdCreate','cmdEdit'])
+    hideButtons(['cmdCreate','cmdEdit','inpAcronym'])
 }
 
 function set_create_mode(f) // puts the form in edit mode
@@ -225,6 +231,6 @@ function set_create_mode(f) // puts the form in edit mode
         fields[j].disabled = false;
     }
     // Hide/Show appropriate buttons
-    showButtons(['cmdCreate','cmdCancel']);
-    hideButtons(['cmdSave','cmdDelete','cmdEdit'])
+    showButtons(['cmdCreate','cmdCancel','inpAcronym']);
+    hideButtons(['cmdSave','cmdDelete','cmdEdit']);
 }

@@ -138,24 +138,5 @@
     "url": "",
     "pays": "-1",
     "date": ""
-  },
-  "ZYX": {
-    "name": "Zo\u00e9 Yonex",
-    "tel": "021",
-    "keepinfo": "",
-    "email": "xyz@cpnv.ch",
-    "url": "",
-    "pays": "101",
-    "date": "",
-    "action": "upd"
-  },
-  "": {
-    "name": "",
-    "tel": "",
-    "keepinfo": "",
-    "email": "",
-    "url": "",
-    "pays": "",
-    "date": ""
   }
 }

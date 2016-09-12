@@ -25,6 +25,7 @@ $description = isset($pages[$page]["description"]) ? $pages[$page]["description"
 <!DOCTYPE html>
 <html>
 <head>
+    <base href="/NikoNiko/"> <!-- This because of the URL Rewriting, that shifts the base path -->
     <meta name="keywords" content="<?= $keywords ?>">
     <meta name="description" content="<?= $description ?>">
     <meta charset="utf-8" />
