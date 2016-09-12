@@ -1,14 +1,4 @@
 <?php
-// Check if email is valid
-function verif_email($adr_email){
-	return filter_var($adr_email, FILTER_VALIDATE_EMAIL);
-}
-
-// Check if url is valid
-function verif_url($url){
-	return filter_var($url, FILTER_VALIDATE_URL);
-}
-
 function parse_dir($dir){
 	$tab=array();
 	if (is_dir ($dir)){
@@ -52,5 +42,61 @@ function find_vote($class, $week,$attendee)
     foreach ($votes as $vote)
         if ($vote['student'] == $attendee && $vote['class'] == $class && $vote['week'] == $week) return $vote['value'];
     return 0;
+}
+
+function validateProfile($profile)
+{
+    global $people;
+
+    $res = array();
+
+    extract($profile); // $acronym,$name,$tel,$keepinfo,$email,$url,$pays,$date
+
+    if (strlen($name) < 5)
+        $res[] = "Nom invalide (trop court)";
+    elseif (!preg_match("/^[a-z ,\.'-]+$/i", $name)) // regexp source:http://stackoverflow.com/questions/2385701/regular-expression-for-first-and-last-name
+        $res[] = "Nom invalide";
+
+    if (strlen($tel) < 12)
+        $res[] = "Numéro de téléphone invalide (trop court)";
+    elseif (!preg_match("/(\+41)\s(\d{2})\s(\d{3})\s(\d{2})\s(\d{2})/",$tel)) // regexp source:http://stackoverflow.com/questions/23015979/regex-for-swiss-phone-number
+        $res[] = "Numéro de téléphone invalide";
+
+    if (strlen($email) < 8)
+        $res[] = "Email invalide (trop court)";
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
+        $res[] = "Email invalide";
+
+    // Check for email address duplicates
+    foreach($people as $key => $val)
+        if ($key != $acronym && ($val['email'] == $email))
+        {
+            $res[] = "Email déjà utilisé";
+            break;
+        }
+
+    if (strlen($url) > 0 && !filter_var($url, FILTER_VALIDATE_URL))
+        $res[] = "URL invalide";
+
+    if (strlen($date) > 0)
+    {
+        $dec = explode(".",$date);
+        if (count($dec) != 3 || $dec[0] < 1 || $dec[0] > 31 || $dec[1] < 1 || $dec[1] > 12 || $dec[2] < 1900 || $dec[2] > 2100)
+            $res[] = "Date invalide";
+    }
+
+    if (count($res) == 0)
+        return null;
+    else
+        return $res;
+}
+
+function displayMessages()
+{
+    global $flashMessage, $infoMessage;
+
+    $plural = (count($flashMessage) > 1) ? "s" : "";
+    if (isset($flashMessage)) echo "<div class='flashMessage'>Erreur$plural: <ul><li>" . implode("</li><li>", $flashMessage) . "</li></ul></div>";
+    if (isset($infoMessage)) echo "<div class='infoMessage'>$infoMessage</div>";
 }
 ?>

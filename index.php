@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 require_once("src/includes/functions.php");
 
 $configs = include("src/config/config.php"); 
@@ -26,12 +25,15 @@ $description = isset($pages[$page]["description"]) ? $pages[$page]["description"
 <!DOCTYPE html>
 <html>
 <head>
+    <base href="/NikoNiko/"> <!-- This because of the URL Rewriting, that shifts the base path -->
     <meta name="keywords" content="<?= $keywords ?>">
     <meta name="description" content="<?= $description ?>">
     <meta charset="utf-8" />
 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <script type="text/javascript" src="src/js/links.js"></script>
+    <script type="text/javascript" src="src/js/buttons.js"></script>
+    <script type="text/javascript" src="src/js/forms.js"></script>
     <script type="text/javascript" src="src/js/load.js"></script>
 
     <link href="src/css/styles.css" rel="stylesheet" type="text/css" />
