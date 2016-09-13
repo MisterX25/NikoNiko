@@ -1,11 +1,11 @@
 {
   "RBI": {
     "name": "BAZZARI Raphael",
-    "tel": "",
+    "tel": "+41 21 123 23 23",
     "keepinfo": "on",
     "email": "rbi@cpnv.ch",
     "url": "",
-    "pays": "23",
+    "pays": "24",
     "date": "",
     "action": "upd"
   },
@@ -50,11 +50,11 @@
   },
   "DDG": {
     "name": "DILLENBOURG Dinesh",
-    "tel": "1",
+    "tel": "+41 21 123 45 67",
     "keepinfo": "",
     "email": "ddg@cpnv.ch",
     "url": "",
-    "pays": "-1",
+    "pays": "2",
     "date": "",
     "action": "upd"
   },
@@ -132,11 +132,29 @@
   },
   "MVI": {
     "name": "VISALLI Marco",
-    "tel": "",
+    "tel": "+41 21 123 23 23",
     "keepinfo": "",
-    "email": "",
+    "email": "mvi@cpnv.ch",
     "url": "",
     "pays": "-1",
+    "date": ""
+  },
+  "ASD": {
+    "name": "alan Sanbold",
+    "tel": "+41 21 123 23 23",
+    "keepinfo": "",
+    "email": "asd@cpnv.ch",
+    "url": "",
+    "pays": "0",
+    "date": "25.4.1966"
+  },
+  "RRR": {
+    "name": "Roger Rieder",
+    "tel": "+41 21 123 45 67",
+    "keepinfo": "",
+    "email": "rrr@ghgh.ch",
+    "url": "",
+    "pays": "0",
     "date": ""
   }
 }

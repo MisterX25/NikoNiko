@@ -35,6 +35,7 @@ $description = isset($pages[$page]["description"]) ? $pages[$page]["description"
     <script type="text/javascript" src="src/js/buttons.js"></script>
     <script type="text/javascript" src="src/js/forms.js"></script>
     <script type="text/javascript" src="src/js/load.js"></script>
+    <script type="text/javascript" src="src/js/clickabletable.js"></script>
 
     <link href="src/css/styles.css" rel="stylesheet" type="text/css" />
 
