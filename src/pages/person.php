@@ -56,7 +56,6 @@ if (!empty($_POST))
             save('people');
             $infoMessage = "Profil de $victim supprimé";
             displayMessages();
-            header ('Location: /NikoNiko/people');
             return;
             break;
 
