@@ -5,16 +5,14 @@
  * Date: 29.08.16
  * Time: 09:10
  */
-extract ($_GET); // $page, $course
+extract ($_GET); // $page, $id
 load('calendars');
 load('votes');
-error_log(print_r($calendars,true));
-error_log(print_r($votes,true));
 
 // prepare empty table with row and column headers
 foreach ($calendars as $item => $value)
 {
-    if ($item == $course) // found the calendar of the requested course
+    if ($item == $id) // found the calendar of the requested course
     {
         extract($value); // $attendees, $workweeks
     }
@@ -32,7 +30,7 @@ foreach ($calendars as $item => $value)
         echo "<tr><td>$week</td>";
         foreach ($attendees as $attendee)
         {
-            $v = find_vote($course, $week, $attendee);
+            $v = find_vote($id, $week, $attendee);
             echo "<td class='vote$v'>&nbsp;</td>";
         }
         echo "</tr>";
