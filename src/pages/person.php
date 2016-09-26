@@ -17,7 +17,11 @@ if (isset($pid))
 {
     $fields['acronym'] = strtoupper($pid);
     $fields = array_merge($fields, $people[$pid]);
+<<<<<<< HEAD
     extract($fields); // $acronym,$name,$tel,$keepinfo,$email,$url,$pays,$date, $action
+=======
+    extract($fields); // $acronym,$name,$tel,$keepinfo,$email,$url,$pays,$date
+>>>>>>> origin/master
     $formMode = 'viewprofile';
 } else
 {
@@ -109,8 +113,12 @@ displayMessages(); // flash and info messages, if any, built during the data han
 ?>
 
 
+<<<<<<< HEAD
 <form name='profile' action="<?php echo htmlentities(strtok($_SERVER["REQUEST_URI"], '?')); ?>" method="post"
       data-formmode="<?= $formMode ?>">
+=======
+<form name='profile' method="post" data-formmode="<?= $formMode ?>">
+>>>>>>> origin/master
     <fieldset>
         <legend>Profil de <?= $acronym ?></legend>
         <p id="inpAcronym">
