@@ -5,14 +5,14 @@
  * Date: 29.08.16
  * Time: 09:10
  */
-extract ($_GET); // $page, $id
+extract ($_GET); // $page, $course
 load('calendars');
 load('votes');
 
 // prepare empty table with row and column headers
 foreach ($calendars as $item => $value)
 {
-    if ($item == $id) // found the calendar of the requested course
+    if ($item == $course) // found the calendar of the requested course
     {
         extract($value); // $attendees, $workweeks
     }
@@ -30,8 +30,8 @@ foreach ($calendars as $item => $value)
         echo "<tr><td>$week</td>";
         foreach ($attendees as $attendee)
         {
-            $v = find_vote($id, $week, $attendee);
-            echo "<td data-attendee='$attendee' data-week='$week' data-course='$id' class='vote$v votable'>&nbsp;</td>";
+            $v = find_vote($course, $week, $attendee);
+            echo "<td class='vote$v'>&nbsp;</td>";
         }
         echo "</tr>";
     }
@@ -43,4 +43,3 @@ foreach ($calendars as $item => $value)
     <li><a href="#" id="mail"><img id="mailimg" src="assets/images/icons/mail.gif"></a></li>
 </ul>
 
-<script>conf_table();</script>
