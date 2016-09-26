@@ -8,11 +8,8 @@
 extract ($_GET); // $page, $id
 load('calendars');
 load('votes');
-<<<<<<< HEAD
-error_log(print_r($calendars,true));
-error_log(print_r($votes,true));
-=======
->>>>>>> origin/master
+//error_log(print_r($calendars,true));
+//error_log(print_r($votes,true));
 
 // prepare empty table with row and column headers
 foreach ($calendars as $item => $value)
@@ -36,11 +33,7 @@ foreach ($calendars as $item => $value)
         foreach ($attendees as $attendee)
         {
             $v = find_vote($id, $week, $attendee);
-<<<<<<< HEAD
-            echo "<td data-attendee='$attendee' data-week='$week' data-course='$course' class='vote$v votable'>&nbsp;</td>";
-=======
             echo "<td class='vote$v'>&nbsp;</td>";
->>>>>>> origin/master
         }
         echo "</tr>";
     }
