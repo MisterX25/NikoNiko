@@ -28,15 +28,36 @@ h1{
 	margin-top:0;
 }
 
+.hidden {
+    display:none;
+}
+
+.formError {
+    color:hotpink;
+    padding: 5px;
+    font-size: small;
+}
+
 .flashMessage{
-	margin:20px 0px;
-	border: 1px solid #f2dede;
-	background-color: #f2dede;
-	color:#b94a48;
-	padding: 4px 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+    margin:20px 0px;
+    border: 1px solid #f2dede;
+    background-color: #f2dede;
+    color:#b94a48;
+    padding: 4px 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.infoMessage{
+    margin:20px 0px;
+    border: 1px solid green;
+    background-color: lightgreen;
+    color:green;
+    padding: 4px 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 a.print{
@@ -106,6 +127,10 @@ form input[type="text"], form input[type="tel"], form input[type="email"], form 
 	box-sizing: border-box;
 }
 
+.acronym {
+    text-transform:uppercase;
+}
+
 table {
 	width: auto;
 	max-width: 100%;
@@ -155,6 +180,7 @@ td {
     font-size: 14px;
     font-weight: 600;
     font-family: inherit;
+    width: 100px;
     padding: 7px 20px;
     background-color: #ffffff;
     text-transform: uppercase;
@@ -170,21 +196,7 @@ td {
 }
 
 .button:hover {
-    font-size: 14px;
-    font-weight: 600;
-    font-family: inherit;
-    padding: 7px 20px;
     background-color: lightgreen;
-    text-transform: uppercase;
-    margin-right: 5px;
-    font-weight: normal;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid lightgray;
-    border-radius: 4px;
 }
 
 .clickable {

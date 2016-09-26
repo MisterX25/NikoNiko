@@ -1,47 +1,142 @@
 {
   "RBI": {
-    "fullname": "BAZZARI Raphael"
+    "name": "BAZZARI Raphael",
+    "tel": "",
+    "keepinfo": "on",
+    "email": "rbi@cpnv.ch",
+    "url": "",
+    "pays": "23",
+    "date": "",
+    "action": "upd"
   },
   "EBA": {
-    "fullname": "BOUSBAA Eric"
+    "name": "BOUSBAA Eric",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": "-1",
+    "date": ""
   },
   "JDA": {
-    "fullname": "DE-SOUSA Joel"
+    "name": "DE-SOUSA Joel",
+    "tel": "021",
+    "keepinfo": "",
+    "email": "jda@cpnv.ch",
+    "url": "",
+    "pays": "196",
+    "date": "1992-12-12",
+    "action": "upd"
   },
   "ADS": {
-    "fullname": "DESSAUGES Antoine"
+    "name": "DESSAUGES Antoine",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": "-1",
+    "date": ""
   },
   "LDS": {
-    "fullname": "DESSAULES Loic"
+    "name": "DESSAULES Loic",
+    "tel": "",
+    "keepinfo": "on",
+    "email": "lds@cpnv.ch",
+    "url": "",
+    "pays": "-1",
+    "date": "",
+    "submit": "Envoi",
+    "action": "upd"
   },
   "DDG": {
-    "fullname": "DILLENBOURG Dinesh"
+    "name": "DILLENBOURG Dinesh",
+    "tel": "1",
+    "keepinfo": "",
+    "email": "ddg@cpnv.ch",
+    "url": "",
+    "pays": "-1",
+    "date": "",
+    "action": "upd"
   },
   "SFH": {
-    "fullname": "FORSYTH Struan"
+    "name": "FORSYTH Struan",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": -1,
+    "date": ""
   },
   "IGI": {
-    "fullname": "GOUJGALI Ilias"
+    "name": "GOUJGALI Ilias",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": -1,
+    "date": ""
   },
   "DKI": {
-    "fullname": "KAYOUMI Doran"
+    "name": "KAYOUMI Doran",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": "-1",
+    "date": ""
   },
   "TMP": {
-    "fullname": "MARCOUP Thomas"
+    "name": "MARCOUP Thomas",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": "-1",
+    "date": ""
   },
   "TRI": {
-    "fullname": "RICCI Thomas"
+    "name": "RICCI Thomas",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": "-1",
+    "date": ""
   },
   "DRT": {
-    "fullname": "ROSAT David"
+    "name": "ROSAT David",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": "-1",
+    "date": ""
   },
   "FSS": {
-    "fullname": "SILVA-MARQUES Fabio-Manuel"
+    "name": "SILVA-MARQUES Fabio-Manuel",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": "-1",
+    "date": ""
   },
   "ESO": {
-    "fullname": "SOTILLO Esteban"
+    "name": "SOTILLO Esteban",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": "-1",
+    "date": ""
   },
   "MVI": {
-    "fullname": "VISALLI Marco"
+    "name": "VISALLI Marco",
+    "tel": "",
+    "keepinfo": "",
+    "email": "",
+    "url": "",
+    "pays": "-1",
+    "date": ""
   }
 }
