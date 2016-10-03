@@ -12,8 +12,8 @@ if (isset($action))
     // Set PHPMailer to use the sendmail transport
     $mail->isSMTP();
     $mail->Host = "mail.cpnv.ch";
-    $mail->SMTPSecure=false;
-    $mail->SMTPAutoTLS=false; // Need this because that's the way this server works: no TLS, no authentication
+    $mail->SMTPSecure=false; // Need this because that's the way this server works: no authentication
+    $mail->SMTPAutoTLS=false; // Need this because that's the way this server works: no TLS
 
     //Set who the message is to be sent from
     $mail->setFrom('xavier.carrel@cpnv.ch', 'NikoNiko Calendar');
