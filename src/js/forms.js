@@ -282,6 +282,5 @@ function checkAcronymAvailability(e)
                 }
         };
         rq.send(params);
-
     }
 }
