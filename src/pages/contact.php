@@ -12,6 +12,8 @@ if (isset($action))
     // Set PHPMailer to use the sendmail transport
     $mail->isSMTP();
     $mail->Host = "mail.cpnv.ch";
+    $mail->SMTPSecure=false;
+    $mail->SMTPAutoTLS=false; // Need this because that's the way this server works: no TLS, no authentication
 
     //Set who the message is to be sent from
     $mail->setFrom('xavier.carrel@cpnv.ch', 'NikoNiko Calendar');
@@ -23,7 +25,6 @@ if (isset($action))
     $mail->Subject = 'NikoNiko Message (PHPMailer)';
     $mail->Body = htmlspecialchars($message);
 
-    $mail->SMTPDebug  = 2;
     //send the message, check for errors
     if (!$mail->send())
     {
@@ -35,17 +36,7 @@ if (isset($action))
     }
     // end of PHPMailer /*/
 
-    // standard mail
-    $to      = 'xavier.carrel@cpnv.ch';
-    $subject = 'NikoNiko Message (mail)';
-    $headers = 'From: xavier.carrel@cpnv.ch' . "\r\n" .
-        'Reply-To: xavier.carrel@cpnv.ch' . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-
-    mail($to, $subject, $message, $headers);
-    // end of standard mail /*/
-
-    $infoMessage = "Message envoyé: $message";
+    $infoMessage = "Message envoyé";
 }
 
 displayMessages(); // flash and info messages, if any, built during the data handling
