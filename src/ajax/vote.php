@@ -5,7 +5,6 @@
  * Date: 13.09.16
  * Time: 14:57
  */
-require_once("../includes/functions.php");
 
 extract($_POST); // $a for attendee, $c for class, $w for week
 if (!(isset($a) && isset($c) && isset($w)))

@@ -38,6 +38,12 @@ h1{
     font-size: small;
 }
 
+.formInfo {
+    color:lightgrey;
+    padding: 5px;
+    font-size: small;
+}
+
 .flashMessage{
     margin:20px 0px;
     border: 1px solid #f2dede;

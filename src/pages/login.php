@@ -81,7 +81,7 @@ displayMessages(); // flash and info messages, if any, built during the data han
         <p>
             <label for="acronym" accesskey="A">Acronyme:</label>
             <input type="text" name="acronym" id="acronym" value="<?= $NikoNikoUser ?>" placeholder="XYZ" maxlength=3
-                   class="acronym" required data-errormsg="Acronyme invalide"/>
+                   class="acronym" required data-errormsg="Acronyme invalide" data-error_inuse="Cet acronyme est déjà utilisé"/>
         </p>
         <p>
             <label for="pword" accesskey="P">Mot de passe:</label>

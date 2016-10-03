@@ -65,11 +65,11 @@ function verifUrlByReg(url)
     return reg.test(url);
 }
 
-function showError (el, altmsg) // Displays the error message of the element
+function showError(el, altmsg) // Displays the error message of the element
 {
     var daddy = el.parentNode;
 
-    msg=document.createElement('div');
+    msg = document.createElement('div');
     if (altmsg === undefined) // no message passed => get it from the HTML
     {
         emessage = el.getAttribute('data-errormsg');
@@ -79,8 +79,8 @@ function showError (el, altmsg) // Displays the error message of the element
     else
         emessage = altmsg;
 
-    msg.innerHTML=emessage;
-    msg.className='formError';
+    msg.innerHTML = emessage;
+    msg.className = 'formError';
     daddy.appendChild(msg);
 }
 
@@ -100,7 +100,7 @@ function verif_form(formulaire)
         //Si un champ obligatoire est vide
         if (input.value == '' && input.getAttribute('required') != null)
         {
-            showError(input,'Champ obligatoire');
+            showError(input, 'Champ obligatoire');
             input.focus();
             valid = false;
         }
@@ -155,25 +155,31 @@ function form_conf()
         fmode = theForm.getAttribute('data-formmode');
         switch (fmode)
         {
-            case 'editprofile': set_edit_mode(theForm); break;
-            case 'viewprofile': set_view_mode(theForm); break;
-            case 'newprofile': set_create_mode(theForm); break;
+            case 'editprofile':
+                set_edit_mode(theForm);
+                break;
+            case 'viewprofile':
+                set_view_mode(theForm);
+                break;
+            case 'newprofile':
+                set_create_mode(theForm);
+                break;
         }
     }
 }
 
 function showButtons(buttonList)
 {
-    for (i=0; i<buttonList.length; i++)
+    for (i = 0; i < buttonList.length; i++)
     {
         var button = document.getElementById(buttonList[i]);
-        button.className = button.className.replace(/\bhidden\b/,''); // remove hidden class
+        button.className = button.className.replace(/\bhidden\b/, ''); // remove hidden class
     }
 }
 
 function hideButtons(buttonList)
 {
-    for (i=0; i<buttonList.length; i++)
+    for (i = 0; i < buttonList.length; i++)
     {
         var button = document.getElementById(buttonList[i]);
         button.className += ' hidden'; // add hidden class
@@ -194,7 +200,7 @@ function set_view_mode(f) // puts the form in view mode
     }
     // Hide/Show appropriate buttons
     showButtons(['cmdEdit']);
-    hideButtons(['cmdDelete','cmdCancel','cmdSave','cmdCreate','inpAcronym'])
+    hideButtons(['cmdDelete', 'cmdCancel', 'cmdSave', 'cmdCreate', 'inpAcronym'])
 }
 
 function set_edit_mode(f) // puts the form in edit mode
@@ -212,8 +218,8 @@ function set_edit_mode(f) // puts the form in edit mode
         fields[j].disabled = false;
     }
     // Hide/Show appropriate buttons
-    showButtons(['cmdSave','cmdDelete','cmdCancel']);
-    hideButtons(['cmdCreate','cmdEdit','inpAcronym'])
+    showButtons(['cmdSave', 'cmdDelete', 'cmdCancel']);
+    hideButtons(['cmdCreate', 'cmdEdit', 'inpAcronym'])
 }
 
 function set_create_mode(f) // puts the form in edit mode
@@ -231,6 +237,51 @@ function set_create_mode(f) // puts the form in edit mode
         fields[j].disabled = false;
     }
     // Hide/Show appropriate buttons
-    showButtons(['cmdCreate','cmdCancel','inpAcronym']);
-    hideButtons(['cmdSave','cmdDelete','cmdEdit']);
+    showButtons(['cmdCreate', 'cmdCancel', 'inpAcronym']);
+    hideButtons(['cmdSave', 'cmdDelete', 'cmdEdit']);
+
+    // Add event handler for acronym validation
+    document.getElementById("acronym").addEventListener("keyup", checkAcronymAvailability);
+}
+
+function checkAcronymAvailability(e)
+{
+    input = document.getElementById("acronym");
+    var oldmsg = document.getElementById("acrovalmsg");
+    if (oldmsg != null) oldmsg.parentNode.removeChild(oldmsg);
+    acro = input.value.toUpperCase();
+    if (acro.length == 3) // input complete
+    {
+        // test it with the server using ajax
+        params = 'acro=' + acro;
+        var rq = new XMLHttpRequest();
+        rq.open("POST", "src/ajax/checkacro.php", true); // true is for async mode
+        rq.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // indicate recipient that parameters are in the url
+
+        rq.onreadystatechange = function ()
+        {
+            if (rq.readyState == XMLHttpRequest.DONE)
+                if (rq.status != 200)
+                    console.log('Error validating new acronym');
+                else
+                {
+                    // prepare message to add
+                    msg = document.createElement('div');
+                    msg.id = 'acrovalmsg';
+                    if (rq.responseText == "Ok")
+                    {
+                        msg.innerHTML = "Acronyme disponible";
+                        msg.className = 'formInfo';
+                    }
+                    else
+                    {
+                        msg.innerHTML = "Acronyme déjà utilisé";
+                        msg.className = 'formError';
+                    }
+                    input.parentNode.appendChild(msg);
+                }
+        };
+        rq.send(params);
+
+    }
 }
