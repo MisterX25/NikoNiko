@@ -1,7 +1,5 @@
 <?php
-//load('workweeks');
-$workweeks=include ("testdata-workweeks.php");
-save('workweeks');
+load('workweeks');
 // that's all we need in terms of data preparation here
 ?>
 <table>

@@ -33,7 +33,13 @@ foreach ($calendars as $item => $value)
         foreach ($attendees as $attendee)
         {
             $v = find_vote($id, $week, $attendee);
-            echo "<td class='vote$v'>&nbsp;</td>";
+            if ($week == weekNumber() && $attendee == $_SESSION['user'])
+            {
+                $cellClass = "vote$v votable";
+            }
+            else
+                $cellClass = "vote$v";
+            echo "<td data-attendee='$attendee' data-week='$week' data-course='$id' class='$cellClass'>&nbsp;</td>";
         }
         echo "</tr>";
     }

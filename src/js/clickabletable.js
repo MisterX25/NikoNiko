@@ -4,8 +4,7 @@
 
 function conf_table()
 {
-    console.log('table configuration');
-    cells=document.getElementsByClassName('clickable');
+    cells=document.getElementsByClassName('votable');
     for (i=0; i<cells.length; i++)
     {
         cell=cells[i];
@@ -18,8 +17,26 @@ function conf_table()
 
 function cycleVote(el)
 {
+    // Retrieve vote info
     course = el.getAttribute('data-course');
     week = el.getAttribute('data-week');
     attendee = el.getAttribute('data-attendee');
-    console.log('cycleVote: '+course+" "+week+" "+attendee);
+
+    // Build and send request
+    params='a='+attendee+'&c='+course+"&w="+week;
+    var rq = new XMLHttpRequest();
+    rq.open("POST", "src/ajax/vote.php", true); // true is for async mode
+    rq.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // indicate recipient that parameters are in the url
+
+    rq.onreadystatechange = function() {
+        if ((rq.readyState == XMLHttpRequest.DONE ) && (rq.status != 200))
+        {
+            alert('Une erreur s\'est produite ('+rq.status+')');
+        }
+        else
+        {
+            el.className = 'vote'+rq.responseText+' votable';
+        }
+    };
+    rq.send(params);
 }

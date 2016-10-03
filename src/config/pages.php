@@ -30,6 +30,16 @@ return array(
         'keywords' 		=> '',
         'description' 	=> '',
     ),
+    'logout' => array(
+        'title' 		=> 'Logout',
+        'keywords' 		=> '',
+        'description' 	=> '',
+    ),
+    'contact' => array(
+        'title' 		=> 'Contact',
+        'keywords' 		=> '',
+        'description' 	=> '',
+    ),
     'calendar' => array(
         'title' 		=> 'NikoNiko',
         'keywords' 		=> '',

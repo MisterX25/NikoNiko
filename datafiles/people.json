@@ -1,6 +1,7 @@
 {
   "RBI": {
     "name": "BAZZARI Raphael",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "on",
     "email": "rbi@cpnv.ch",
@@ -11,6 +12,7 @@
   },
   "EBA": {
     "name": "BOUSBAA Eric",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
     "email": "",
@@ -20,6 +22,7 @@
   },
   "JDA": {
     "name": "DE-SOUSA Joel",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "021",
     "keepinfo": "",
     "email": "jda@cpnv.ch",
@@ -30,6 +33,7 @@
   },
   "ADS": {
     "name": "DESSAUGES Antoine",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
     "email": "",
@@ -39,6 +43,7 @@
   },
   "LDS": {
     "name": "DESSAULES Loic",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "on",
     "email": "lds@cpnv.ch",
@@ -50,6 +55,7 @@
   },
   "DDG": {
     "name": "DILLENBOURG Dinesh",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "1",
     "keepinfo": "",
     "email": "ddg@cpnv.ch",
@@ -60,6 +66,7 @@
   },
   "SFH": {
     "name": "FORSYTH Struan",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
     "email": "",
@@ -69,6 +76,7 @@
   },
   "IGI": {
     "name": "GOUJGALI Ilias",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
     "email": "",
@@ -78,6 +86,7 @@
   },
   "DKI": {
     "name": "KAYOUMI Doran",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
     "email": "",
@@ -87,6 +96,7 @@
   },
   "TMP": {
     "name": "MARCOUP Thomas",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
     "email": "",
@@ -96,6 +106,7 @@
   },
   "TRI": {
     "name": "RICCI Thomas",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
     "email": "",
@@ -105,15 +116,17 @@
   },
   "DRT": {
     "name": "ROSAT David",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "drt@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": ""
   },
   "FSS": {
     "name": "SILVA-MARQUES Fabio-Manuel",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
     "email": "",
@@ -123,6 +136,7 @@
   },
   "ESO": {
     "name": "SOTILLO Esteban",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
     "email": "",
@@ -132,11 +146,13 @@
   },
   "MVI": {
     "name": "VISALLI Marco",
+    "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "mvi@cpnv.ch",
     "url": "",
     "pays": "-1",
-    "date": ""
+    "date": "",
+    "token": "89b052835444df2c3555cde322856244"
   }
 }

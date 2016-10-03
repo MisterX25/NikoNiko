@@ -199,7 +199,7 @@ td {
     background-color: lightgreen;
 }
 
-.clickable {
+.votable {
     cursor: pointer;
 }
 
@@ -221,4 +221,8 @@ td {
 
 .thumbnail {
     width: 60px;
+}
+
+.rightsidelink {
+    float:right;
 }
