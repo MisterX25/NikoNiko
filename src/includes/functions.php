@@ -60,7 +60,7 @@ function validateProfile($profile)
     if (strlen($tel) < 12)
         $res[] = "Numéro de téléphone invalide (trop court)";
     elseif (!preg_match("/(\+41)\s(\d{2})\s(\d{3})\s(\d{2})\s(\d{2})/",$tel)) // regexp source:http://stackoverflow.com/questions/23015979/regex-for-swiss-phone-number
-        $res[] = "Numéro de téléphone invalide";
+        $res[] = "Numéro de téléphone $tel invalido";
 
     if (strlen($email) < 8)
         $res[] = "Email invalide (trop court)";
@@ -98,5 +98,13 @@ function displayMessages()
     $plural = (count($flashMessage) > 1) ? "s" : "";
     if (isset($flashMessage)) echo "<div class='flashMessage'>Erreur$plural: <ul><li>" . implode("</li><li>", $flashMessage) . "</li></ul></div>";
     if (isset($infoMessage)) echo "<div class='infoMessage'>$infoMessage</div>";
+}
+
+function weekNumber()
+{
+    $now = new DateTime();
+    $w = $now->format("W");
+    $w = substr("0".$now->format("W"), -2); // ensure we have a leading 0 in weeks 1-9
+    return $now->format("y").$w;
 }
 ?>

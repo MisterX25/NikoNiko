@@ -23,7 +23,6 @@ function autoSelect(form_id, value)
 //Vérification de la validité d'une date
 function verifDate(d, m, y)
 {
-    console.log(y); return false;
     if (y < 1900 || y > 2100) return false;
 
     if (m == 2 && d > 28)
