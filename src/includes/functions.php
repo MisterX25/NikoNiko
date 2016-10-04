@@ -107,4 +107,30 @@ function weekNumber()
     $w = substr("0".$now->format("W"), -2); // ensure we have a leading 0 in weeks 1-9
     return $now->format("y").$w;
 }
+
+function prepareMail($to,$subject, $body)
+{
+    // Using PHPMailer
+    require 'assets/PHPMailer/PHPMailerAutoload.php';
+
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer;
+    // Set PHPMailer to send email directly to SMTP server
+    $mail->isSMTP();
+    $mail->Host = "mail.cpnv.ch";
+    $mail->SMTPSecure=false;
+    $mail->SMTPAutoTLS=false; // Need this because that's the way this server works: no TLS, no authentication
+    $mail->CharSet = 'UTF-8';
+    $mail->isHTML(true);
+
+    //Set who the message is to be sent from
+    $mail->setFrom('noreply@cpnv.ch', 'NikoNiko Calendar');
+    //Set who the message is to be sent to
+    $mail->addAddress($to);
+    //Set the subject line
+    $mail->Subject = $subject;
+    $mail->Body = $body;
+
+    return $mail;
+}
 ?>

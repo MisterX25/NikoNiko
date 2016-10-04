@@ -4,39 +4,13 @@ extract($_POST); // $action, $message
 
 if (isset($action))
 {
-    // Using PHPMailer
-    require 'assets/PHPMailer/PHPMailerAutoload.php';
-
-    //Create a new PHPMailer instance
-    $mail = new PHPMailer;
-    // Set PHPMailer to use the sendmail transport
-    $mail->isSMTP();
-    $mail->Host = "mail.cpnv.ch";
-    $mail->SMTPSecure=false;
-    $mail->SMTPAutoTLS=false; // Need this because that's the way this server works: no TLS, no authentication
-
-    //Set who the message is to be sent from
-    $mail->setFrom('xavier.carrel@cpnv.ch', 'NikoNiko Calendar');
-    //Set an alternative reply-to address
-    $mail->addReplyTo('xavier.carrel@cpnv.ch', 'cpnv');
-    //Set who the message is to be sent to
-    $mail->addAddress('xcl@cpnv.ch', 'Xavier Carrel');
-    //Set the subject line
-    $mail->Subject = 'NikoNiko Message (PHPMailer)';
-    $mail->Body = htmlspecialchars($message);
+    $mail = prepareMail('xcl@cpnv.ch','Contact client', $message);
 
     //send the message, check for errors
     if (!$mail->send())
-    {
         $flashMessage[] = $mail->ErrorInfo;
-    }
     else
-    {
-        $infoMessage = "Message sent!";
-    }
-    // end of PHPMailer /*/
-
-    $infoMessage = "Message envoyé";
+        $infoMessage = "Message envoyé";
 }
 
 displayMessages(); // flash and info messages, if any, built during the data handling

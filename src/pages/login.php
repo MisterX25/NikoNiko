@@ -25,7 +25,7 @@ if (isset($_GET['token'])) // one-time login using a token
         header("Location: newpassword");
     } else
     {
-        $flashMessage[] = "Email inconnu";
+        $flashMessage[] = "Token invalide";
     }
 }
 
@@ -56,14 +56,18 @@ if (isset($action))
         case 'resetpwd':
             // first find the user
             foreach ($people as $key => $value)
-                if ($value['email'] == $email)
+                if (strtoupper($value['email']) == strtoupper($email))
                     $user = $key;
             if (isset($user))
             {
                 $token = bin2hex(openssl_random_pseudo_bytes(16));
-                $infoMessage = "Vous pouvez vous connecter grâce à ce lien: dvm/NikoNiko/Home?token=$token";
                 $people[$user]['token'] = $token;
                 save('people');
+                $mail = prepareMail($people[$user]['email'],'Réinitialisation du mot de passe',"Vous pouvez vous connecter grâce à <html><a href='http://172.17.101.21/NikoNiko/Home?token=$token'>ce lien</a></html>");
+                if (!$mail->send())
+                    $flashMessage[] = $mail->ErrorInfo;
+                else
+                    $infoMessage = "Un mail de réinitialisation du mot de passe vous a été envoyé";
             } else
             {
                 $flashMessage[] = "Email inconnu";

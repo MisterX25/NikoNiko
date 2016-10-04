@@ -4,7 +4,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "on",
-    "email": "rbi@cpnv.ch",
+    "email": "Raphael.BAZZARI@cpnv.ch",
     "url": "",
     "pays": "23",
     "date": "",
@@ -15,7 +15,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "Eric.BOUSBAA@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": ""
@@ -25,7 +25,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "021",
     "keepinfo": "",
-    "email": "jda@cpnv.ch",
+    "email": "Joel.DE-SOUSA@cpnv.ch",
     "url": "",
     "pays": "196",
     "date": "1992-12-12",
@@ -36,7 +36,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "Antoine.DESSAUGES@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": ""
@@ -46,7 +46,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "on",
-    "email": "lds@cpnv.ch",
+    "email": "Loic.DESSAULES@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": "",
@@ -58,7 +58,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "1",
     "keepinfo": "",
-    "email": "ddg@cpnv.ch",
+    "email": "Dinesh.DILLENBOURG@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": "",
@@ -69,7 +69,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "Struan.FORSYTH@cpnv.ch",
     "url": "",
     "pays": -1,
     "date": ""
@@ -79,7 +79,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "Ilias.GOUJGALI@cpnv.ch",
     "url": "",
     "pays": -1,
     "date": ""
@@ -89,7 +89,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "Doran.KAYOUMI@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": ""
@@ -99,7 +99,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "Thomas.MARCOUP@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": ""
@@ -109,7 +109,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "Thomas.RICCI@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": ""
@@ -119,7 +119,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "drt@cpnv.ch",
+    "email": "David.ROSAT@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": ""
@@ -129,7 +129,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "Fabio-Manuel.SILVA-MARQUES@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": ""
@@ -139,7 +139,7 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "",
+    "email": "Esteban.SOTILLO@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": ""
@@ -149,10 +149,20 @@
     "password": "$2y$10$WnTThxzOlda1UzFUOEsaeu69st3tobEROTRL911CKaDzY9spUAU3a",
     "tel": "",
     "keepinfo": "",
-    "email": "mvi@cpnv.ch",
+    "email": "Marco.VISALLI@cpnv.ch",
     "url": "",
     "pays": "-1",
     "date": "",
     "token": "89b052835444df2c3555cde322856244"
+  },
+  "XCL": {
+    "name": "Xavier Carrel",
+    "tel": "+41 21 123 45 67",
+    "keepinfo": "",
+    "email": "xcl@cpnv.ch",
+    "url": "",
+    "pays": "0",
+    "date": "",
+    "token": "6d119f5eec9fce12642a27b6c1741712"
   }
 }
