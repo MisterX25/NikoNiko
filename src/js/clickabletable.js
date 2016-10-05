@@ -32,9 +32,9 @@ function cycleVote(el)
     {
         if (rq.readyState == XMLHttpRequest.DONE)
             if (rq.status == 200)
-                alert('Une erreur s\'est produite (' + rq.status + ')');
-            else
                 el.className = 'vote' + rq.responseText + ' votable';
+            else
+                alert('Une erreur s\'est produite (' + rq.status + ')');
     };
     rq.send(params);
 }

@@ -50,7 +50,7 @@ function verifEmailByReg(mail)
     var pattern = '^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$';
     // Motif complexe ~99.99% de la norme RFC2822
     var pattern2822 = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-    var reg = new RegExp(pattern2822);
+    var reg = new RegExp(pattern);
     return reg.test(mail);
 }
 
@@ -149,7 +149,7 @@ function form_conf()
         theForm.onsubmit = function ()
         {
             return verif_form(this);
-        }
+        };
 
         // Put the form in the appropriate mode
         fmode = theForm.getAttribute('data-formmode');
@@ -220,6 +220,8 @@ function set_edit_mode(f) // puts the form in edit mode
     // Hide/Show appropriate buttons
     showButtons(['cmdSave', 'cmdDelete', 'cmdCancel']);
     hideButtons(['cmdCreate', 'cmdEdit', 'inpAcronym'])
+
+    document.getElementById("email").addEventListener("keyup", checkAvailability);
 }
 
 function set_create_mode(f) // puts the form in edit mode
@@ -241,46 +243,60 @@ function set_create_mode(f) // puts the form in edit mode
     hideButtons(['cmdSave', 'cmdDelete', 'cmdEdit']);
 
     // Add event handler for acronym validation
-    document.getElementById("acronym").addEventListener("keyup", checkAcronymAvailability);
+    document.getElementById("acronym").addEventListener("keyup", checkAvailability);
+    document.getElementById("email").addEventListener("keyup", checkAvailability);
 }
 
-function checkAcronymAvailability(e)
+function checkAvailability(e)
 {
-    input = document.getElementById("acronym");
-    var oldmsg = document.getElementById("acrovalmsg");
+    field = e.target; // the field: either mail or acronym
+
+    // Remove previous validation messages - if any
+    oldmsgid = field.id+'msg';
+    var oldmsg = document.getElementById(oldmsgid);
     if (oldmsg != null) oldmsg.parentNode.removeChild(oldmsg);
-    acro = input.value.toUpperCase();
-    if (acro.length == 3) // input complete
+
+    val = field.value.toUpperCase();
+    // assess if input is complete
+    switch (field.id)
+    {
+        case 'acronym': inputcomplete = (val.length == 3); break;
+        case 'email': inputcomplete = verifEmailByReg(val); break;
+    }
+
+    if (inputcomplete) // let's check it with the server using ajax
     {
         // test it with the server using ajax
-        params = 'acro=' + acro;
+        params = field.id + '=' + val;
         var rq = new XMLHttpRequest();
-        rq.open("POST", "src/ajax/checkacro.php", true); // true is for async mode
+        rq.open("POST", "src/ajax/checkavailability.php", true); // true is for async mode
         rq.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // indicate recipient that parameters are in the url
 
         rq.onreadystatechange = function ()
         {
             if (rq.readyState == XMLHttpRequest.DONE)
                 if (rq.status != 200)
-                    console.log('Error validating new acronym');
+                    console.log('Error validating field: '+field.id);
                 else
                 {
                     // prepare message to add
                     msg = document.createElement('div');
-                    msg.id = 'acrovalmsg';
+                    msg.id = field.id+'msg';
                     if (rq.responseText == "Ok")
                     {
-                        msg.innerHTML = "Acronyme disponible";
+                        msg.innerHTML = "Disponible";
                         msg.className = 'formInfo';
                     }
                     else
                     {
-                        msg.innerHTML = "Acronyme déjà utilisé";
+                        msg.innerHTML = "Déjà utilisé";
                         msg.className = 'formError';
                     }
-                    input.parentNode.appendChild(msg);
+                    field.parentNode.appendChild(msg);
                 }
         };
         rq.send(params);
     }
+    else
+        console.log('incomplete');
 }

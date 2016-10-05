@@ -21,7 +21,6 @@ $description = isset($pages[$page]["description"]) ? $pages[$page]["description"
 
 extract($_SESSION); // $user
 if (!isset($user)) $page="login"; // force login page
-
 // data is ready: show page
 ?>
 

@@ -63,7 +63,7 @@ if (isset($action))
                 $token = bin2hex(openssl_random_pseudo_bytes(16));
                 $people[$user]['token'] = $token;
                 save('people');
-                $mail = prepareMail($people[$user]['email'],'Réinitialisation du mot de passe',"Vous pouvez vous connecter grâce à <html><a href='http://172.17.101.21/NikoNiko/Home?token=$token'>ce lien</a></html>");
+                $mail = prepareMail($people[$user]['email'],'Réinitialisation du mot de passe',"Vous pouvez vous connecter grâce à <html><a href='http://".$_SERVER['SERVER_ADDR']."/NikoNiko/Home?token=$token'>ce lien</a></html>");
                 if (!$mail->send())
                     $flashMessage[] = $mail->ErrorInfo;
                 else
