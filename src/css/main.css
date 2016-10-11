@@ -232,3 +232,24 @@ td {
 .rightsidelink {
     float:right;
 }
+
+.dynamenutop {
+    display: inline-block;
+    position: relative;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.dynamenuentry {
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+    vertical-align: top;
+    background-color: #f0f0f0;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+
+.dynamenuentry:hover {
+    text-decoration: underline;
+}

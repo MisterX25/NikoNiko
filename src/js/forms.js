@@ -69,7 +69,7 @@ function showError(el, altmsg) // Displays the error message of the element
 {
     var daddy = el.parentNode;
 
-    msg = document.createElement('div');
+    entry = document.createElement('div');
     if (altmsg === undefined) // no message passed => get it from the HTML
     {
         emessage = el.getAttribute('data-errormsg');
@@ -79,9 +79,9 @@ function showError(el, altmsg) // Displays the error message of the element
     else
         emessage = altmsg;
 
-    msg.innerHTML = emessage;
-    msg.className = 'formError';
-    daddy.appendChild(msg);
+    entry.innerHTML = emessage;
+    entry.className = 'formError';
+    daddy.appendChild(entry);
 }
 
 function verif_form(formulaire)
@@ -252,7 +252,7 @@ function checkAvailability(e)
     field = e.target; // the field: either mail or acronym
 
     // Remove previous validation messages - if any
-    oldmsgid = field.id+'msg';
+    oldmsgid = field.id+'entry';
     var oldmsg = document.getElementById(oldmsgid);
     if (oldmsg != null) oldmsg.parentNode.removeChild(oldmsg);
 
@@ -280,19 +280,19 @@ function checkAvailability(e)
                 else
                 {
                     // prepare message to add
-                    msg = document.createElement('div');
-                    msg.id = field.id+'msg';
+                    entry = document.createElement('div');
+                    entry.id = field.id+'entry';
                     if (rq.responseText == "Ok")
                     {
-                        msg.innerHTML = "Disponible";
-                        msg.className = 'formInfo';
+                        entry.innerHTML = "Disponible";
+                        entry.className = 'formInfo';
                     }
                     else
                     {
-                        msg.innerHTML = "Déjà utilisé";
-                        msg.className = 'formError';
+                        entry.innerHTML = "Déjà utilisé";
+                        entry.className = 'formError';
                     }
-                    field.parentNode.appendChild(msg);
+                    field.parentNode.appendChild(entry);
                 }
         };
         rq.send(params);

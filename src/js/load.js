@@ -23,4 +23,6 @@ window.onload = function ()
             conf_table();
             break;
     }
+
+    dynamenu_conf();
 }
