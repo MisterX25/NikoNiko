@@ -47,11 +47,8 @@ function verifDate(d, m, y)
 function verifEmailByReg(mail)
 {
     // Motif simple
-    var pattern = '^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$';
-    // Motif complexe ~99.99% de la norme RFC2822
-    var pattern2822 = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-    var reg = new RegExp(pattern);
-    return reg.test(mail);
+    var pattern = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,4}$/;
+    return pattern.test(mail);
 }
 
 // Vérification d'url par expression régulière
