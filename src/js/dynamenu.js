@@ -127,24 +127,14 @@ function addMenuEntries(myPeople, id)
 
 function showProfile(p) // go to the profile of the person, but first records it in the favorites cookie
 {
-    // check if it is already a favorite
-    isFavorite = false;
-    if (favorites != null)
-    {
-        for (i = 0; i < favorites.length; i++)
-            if (favorites[i] == p)
-            {
-                isFavorite = true;
-                break;
-            }
-    }
-    else
-        favorites = [];
+    newfavorites = []; // we will have to rebuild the favorites list
+    newfavorites.push(p);
 
-    if (!isFavorite) // then add it
-    {
-        favorites.unshift(p); // add it at the beginning
-        createCookie('favorites', JSON.stringify(favorites));
-    }
+    if (favorites != null)
+        for (i = 0; i < favorites.length; i++)
+            if (favorites[i] != p)
+                newfavorites.push(favorites[i]);
+    createCookie('favorites', JSON.stringify(newfavorites));
+
     window.location = '/NikoNiko/person/'+p;
 }
