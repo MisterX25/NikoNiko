@@ -12,7 +12,7 @@ if (!(isset($a) && isset($c) && isset($w)))
     error_log ("Incorrect vote");
     die ("-1");
 }
-$votes = json_decode(file_get_contents("../../datafiles/votes.json"), true);
+$votes = json_decode(file_get_contents("../../data/votes.json"), true);
 $update = false;
 for($i=0; $i<count($votes); $i++)
     if ($votes[$i]['student'] == $a && $votes[$i]['class'] == $c && $votes[$i]['week'] == $w) // has already voted -> increment
@@ -36,6 +36,6 @@ if (!$update) // add new vote
     $v = 1;
     $votes[] = array ('student' => $a, 'class' => $c, 'week' => $w, 'value' => $v);
 }
-file_put_contents("../../datafiles/votes.json",json_encode($votes));
+file_put_contents("../../data/votes.json",json_encode($votes));
 echo $v;
 ?>

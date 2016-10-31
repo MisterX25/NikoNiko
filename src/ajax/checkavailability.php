@@ -6,7 +6,7 @@
  * Time: 12:03
  */
 
-$people = json_decode(file_get_contents("../../datafiles/people.json"), true);
+$people = json_decode(file_get_contents("../../data/people.json"), true);
 
 extract($_POST); // $acronym or $email
 

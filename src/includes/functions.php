@@ -26,14 +26,14 @@ function save($varname)
 {
     global $calendars, $classes, $people, $votes, $workweeks, $pages; // need access to thos variables
 
-    file_put_contents("datafiles/$varname.json",json_encode($$varname));
+    file_put_contents("data/$varname.json",json_encode($$varname));
 }
 
 function load($varname)
 {
     global $calendars, $classes, $people, $votes, $workweeks; // need access to those variables
 
-    $$varname = json_decode(file_get_contents("datafiles/$varname.json"), true);
+    $$varname = json_decode(file_get_contents("data/$varname.json"), true);
 }
 
 function find_vote($class, $week,$attendee)
