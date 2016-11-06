@@ -23,6 +23,19 @@ $description = isset($pages[$page]["description"]) ? $pages[$page]["description"
 
 extract($_SESSION); // $user
 if (!isset($user)) $page = "login"; // force login page
+
+// User icon
+$pathtostorage = "data/pictures/$user";
+$files = scandir($pathtostorage);
+$nbpics = count($files) -2; // discard the . and ..
+if ($nbpics > 0)
+{
+    $pick = rand(1,$nbpics);
+    $usericon = $pathtostorage."/".$files[$pick+1];
+}
+else
+    $usericon = "data/pictures/unknown.png";
+
 // data is ready: show page
 ?>
 
@@ -42,8 +55,10 @@ if (!isset($user)) $page = "login"; // force login page
     <script type="text/javascript" src="src/js/load.js"></script>
     <script type="text/javascript" src="src/js/clickabletable.js"></script>
     <script type="text/javascript" src="src/js/misc.js"></script>
+    <script src="assets/jquery/jquery-3.1.1.min.js"></script>
 
     <link href="src/css/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/lightbox/dist/css/lightbox.css" rel="stylesheet">
 
     <title><?php echo $title ?></title>
 </head>
@@ -62,7 +77,7 @@ if (!isset($user)) $page = "login"; // force login page
         <?php
         if (isset($user))
         {
-            echo "<a class='rightsidelink' href='logout'>Déconnexion $user</a>";
+            echo "<a class='rightsidelink' href='logout'>Déconnexion <img src='$usericon' width='16px' /></a>";
         }
         ?>
         </ul>
@@ -79,6 +94,8 @@ if (!isset($user)) $page = "login"; // force login page
 <footer>
     &copy; 2016 <a href="http://www.cpnv.ch">CPNV</a> - XCL - All Rights Reserved
 </footer>
+
+<script src="assets/lightbox/dist/js/lightbox.js"></script>
 
 </body>
 </html>

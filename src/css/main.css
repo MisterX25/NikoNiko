@@ -253,3 +253,15 @@ td {
 .dynamenuentry:hover {
     text-decoration: underline;
 }
+
+.picframe {
+    max-width:50px;
+    max-height:50px;
+    width: auto;
+    height: auto;
+    margin:10px;
+}
+
+.picframe:hover {
+    border: 2px solid blue;
+}

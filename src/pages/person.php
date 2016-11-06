@@ -24,7 +24,10 @@ if (isset($pid))
     $formMode = 'newprofile';
 }
 
+$thisismyprofile = ($pid == $user); // The page we're showing is that of the user logged in
+
 //error_log("POST: " . print_r($_POST, true));
+//error_log("FILES: " . print_r($_FILES, true));
 
 if (!empty($_POST))
 {
@@ -91,6 +94,23 @@ if (!empty($_POST))
                 $formMode = 'editprofile';
             }
             break;
+
+        case 'addPicture':
+            // First check if directory exists
+            $pathtostorage = "data/pictures/$user";
+            if (!is_dir($pathtostorage)) mkdir($pathtostorage);
+
+            // Accept file only if it is an image
+            $fname = $_FILES['newpicfile']['name'];
+            if (getimagesize($tmp_name))
+            {
+                // build a name for the file
+                $numpic = count(scandir($pathtostorage))+1; // number of files present in the directory
+                $fext = substr($fname,strrpos($fname,".")+1); // grab file extension
+                $upfile = "$user$numpic.$fext";
+                move_uploaded_file($tmp_name,"$pathtostorage/$upfile");
+            }
+            break;
     }
 }
 
@@ -104,11 +124,32 @@ for ($i = 0; $i < count($countries); $i++)
     $countryList .= (" >" . $countries[$i] . "</option>");
 }
 
+// Build list of Images to show
+if (is_dir("data/pictures/$pid")) // read pics
+{
+    $files = scandir("data/pictures/$pid");
+    foreach ($files as $file)
+        if ($imgattr = getimagesize("data/pictures/$pid/$file"))
+            $pics[] = array("filename" => "data/pictures/$pid/$file","title" => "Dimensions: ".$imgattr[0]."x".$imgattr[1]);
+    if (count($pics) == 0) $pics[] = array("filename" => "data/pictures/unknown.png","title" => "Dossier vide");
+}
+else
+    $pics[] = array("filename" => "data/pictures/unknown.png","title" => "Aucune image chargée");
+
 displayMessages(); // flash and info messages, if any, built during the data handling
 
 ?>
 
-
+<h3>Mes images</h3>
+<?php
+foreach ($pics as $pic)
+    echo "<a href='".$pic['filename']."' data-lightbox='profile-set' data-title='".$pic['title']."'><img class='picframe' src='".$pic['filename']."' alt=''/></a>";
+if (($user == $pid) && (count($pics) < 4)) // user can add more
+    echo "<form name='newpic' method='post' enctype='multipart/form-data'>
+            <input type='file' name='newpicfile' />
+            <button id='cmdAddpic' name='action' type='submit' class='button' value='addPicture'>Ajouter</button>
+          </form>";
+?>
 <form name='profile' method="post" data-formmode="<?= $formMode ?>">
     <fieldset>
         <legend>Profil de <?= $acronym ?></legend>
@@ -158,7 +199,10 @@ displayMessages(); // flash and info messages, if any, built during the data han
             <button id="cmdSave" name="action" class="button" type="submit" value="update">Sauver</button>
             <button id="cmdCreate" name="action" class="button" type="submit" value="create">Créer</button>
             <button id="cmdCancel" type="button" class="button">Annuler</button>
-            <button id="cmdEdit" type="button" class="button">Editer</button>
+            <?php
+            if ($user == $pid) // allow edition
+                echo "<button id='cmdEdit' type='button' class='button'>Editer</button>";
+            ?>
         </div>
     </fieldset>
 </form>
